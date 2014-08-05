@@ -1,0 +1,88 @@
+﻿*
+{
+    font-family:'Maven Pro',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.product
+{
+    height:300px;
+    width: 150px;
+    float: left;
+    border: 2px solid #666666;
+    background-color: white;
+    padding:3px;
+    margin:5px;
+    text-align: center;
+    cursor: move;
+}
+
+.selectedproduct
+{
+    padding:3px;
+    text-align: center;
+}
+        
+.bag
+{
+    float:left;
+    padding:10px;
+    text-align: center;
+    cursor: move;
+}
+        
+.highlight
+{
+    background-color:Yellow;
+}
+#Menu1 a
+{
+    margin-left:10px;
+    margin-right:10px;
+    height:100%;
+    padding-top:24px;
+    padding-bottom:24px;
+    position: relative;
+    display: block;
+    padding: 18px 24px;
+    text-decoration: none;
+    display: block;
+    color :#999999;
+}
+#Menu1 a:hover
+{
+    color:White;
+}
+#Menu2 ul
+{
+    margin:0px;
+}
+#Menu2 a
+{
+    margin-left:10px;
+    margin-right:10px;
+    height:100%;
+    padding-top:24px;
+    padding-bottom:24px;
+    position: relative;
+    display: block;
+    padding: 18px 24px;
+    text-decoration: none;
+    display: block;
+    color:#999999;
+}
+#Menu2 a:hover
+{
+    color:White;
+}
+#MenuMaster a
+{
+    margin-left:10px;
+    margin-right:10px;
+    padding-top:24px;
+    padding-bottom:24px;
+    position: relative;
+    display: block;
+    padding: 18px 24px;
+    text-decoration: none;
+    display:inline-block;
+    color:White;
+}

@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: #5a9da3;text-align: center;WIDTH: 100%;HEIGHT: 100%;"><head><title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form runat = "server" method="post" id="form1" style="width: 90%;HEIGHT: 90%;background-color: white;border-radius: 10px;margin:auto auto auto auto;">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    
+    </form>
+</body>
+<ul id="MenuMaster" style="margin: 0px auto 0px auto; display: inline-block">
+    <li style="position: relative; display: inline-block;"><a href="About.aspx" style="text-decoration: none; color: #FFFFFF; list-style-type: none">Home</a></li>
+    <li style="position: relative; display: inline-block;"><a style="text-decoration: none; color: #FFFFFF; list-style-type: none">Contact</a></li>
+    <li style="position: relative; display: inline-block;"><a style="text-decoration: none; color: #FFFFFF; list-style-type: none">Legal</a></li>
+</ul>
+</html>

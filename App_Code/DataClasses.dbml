@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Canister" Member="Canisters">
+    <Type Name="Canister">
+      <Column Name="CanisterID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="File_Canister" Member="File" ThisKey="CanisterID" OtherKey="CanisterID" Type="File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Files" Member="Files">
+    <Type Name="File">
+      <Column Name="FileID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CanisterID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FileLocation" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FileType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FileSize" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="File_Canister" Member="Canisters" ThisKey="CanisterID" OtherKey="CanisterID" Type="Canister" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shorten" Member="Shorten1s">
+    <Type Name="Shorten1">
+      <Column Name="Url" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.DeleteFile" Method="DeleteFile">
+    <Parameter Name="FileID" Parameter="fileID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Flag" Parameter="flag" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertFile" Method="InsertFile">
+    <Parameter Name="FileName" Parameter="fileName" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="FileLocation" Parameter="fileLocation" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="FileType" Parameter="fileType" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="FileID" Parameter="fileID" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Parameter Name="CanisterID" Parameter="canisterID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="FileSize" Parameter="fileSize" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertCanister" Method="InsertCanister">
+    <Parameter Name="CanisterID" Parameter="canisterID" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ShortenUrl" Method="ShortenUrl">
+    <Parameter Name="Url" Parameter="url" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Value" Parameter="value" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
